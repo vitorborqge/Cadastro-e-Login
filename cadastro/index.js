@@ -98,7 +98,7 @@ function cadastrar(){
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = 'https://cdpn.io/thicode/debug/ZELzYxV/dXAqBaRyvwJk'
+        window.location.href = 'login/login.html'
     }, 3000)
   
     
@@ -132,5 +132,4 @@ btnConfirm.addEventListener('click', ()=>{
 
 
 
-  
   
