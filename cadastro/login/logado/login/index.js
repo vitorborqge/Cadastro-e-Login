@@ -42,13 +42,13 @@ function entrar(){
   // se tiver correto vai redirecionar para outra pagina
   if(usuario.value == userValid.user && senha.value == userValid.senha){
     window.location.href = 'logado/logado.html'
-    
+    // numero aleatorio do token
     let mathRandom = Math.random().toString(16).substr(2)
     let token = mathRandom + mathRandom
     
     localStorage.setItem('token', token)
     localStorage.setItem('userLogado', JSON.stringify(userValid))
-  } else {
+  } else { //senao vai aparecer mensagem de erro
     userLabel.setAttribute('style', 'color: red')
     usuario.setAttribute('style', 'border-color: red')
     senhaLabel.setAttribute('style', 'color: red')
@@ -59,3 +59,4 @@ function entrar(){
   }
   
 }
+
