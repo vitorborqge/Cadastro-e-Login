@@ -9,7 +9,7 @@ btn.addEventListener('click', ()=>{
     inputSenha.setAttribute('type', 'password')
   }
 })
-
+//função ao clicar no botão
 function entrar(){
   let usuario = document.querySelector('#usuario')
   let userLabel = document.querySelector('#userLabel')
@@ -27,7 +27,7 @@ function entrar(){
   }
   
   listaUser = JSON.parse(localStorage.getItem('listaUser'))
-  
+   //Validação para se tiver correto o nome, o usuario e a senha
   listaUser.forEach((item) => {
     if(usuario.value == item.userCad && senha.value == item.senhaCad){
        
@@ -39,16 +39,16 @@ function entrar(){
       
     }
   })
-   
+  // se tiver correto vai redirecionar para outra pagina
   if(usuario.value == userValid.user && senha.value == userValid.senha){
-    window.location.href = 'https://cdpn.io/thicode/debug/abpVEeB/jVMpoEDNzPxk'
-    
+    window.location.href = 'logado/logado.html'
+    // numero aleatorio do token
     let mathRandom = Math.random().toString(16).substr(2)
     let token = mathRandom + mathRandom
     
     localStorage.setItem('token', token)
     localStorage.setItem('userLogado', JSON.stringify(userValid))
-  } else {
+  } else { //senao vai aparecer mensagem de erro
     userLabel.setAttribute('style', 'color: red')
     usuario.setAttribute('style', 'border-color: red')
     senhaLabel.setAttribute('style', 'color: red')
